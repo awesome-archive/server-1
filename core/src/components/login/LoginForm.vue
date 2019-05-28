@@ -60,8 +60,6 @@
 					   v-model="user"
 					   @change="updateUsername"
 					   required>
-				<!--<?php p($_['user_autofocus'] ? 'autofocus' : ''); ?>
-				autocomplete="<?php p($_['login_form_autocomplete']); ?>" autocapitalize="none" autocorrect="off"-->
 				<label for="user" class="infield">{{ t('core', 'Username or	email') }}</label>
 			</p>
 
@@ -75,8 +73,6 @@
 					   :placeholder="t('core', 'Password')"
 					   :aria-label="t('core', 'Password')"
 					   required>
-				<!--<?php p($_['user_autofocus'] ? '' : 'autofocus'); ?>
-				autocomplete="<?php p($_['login_form_autocomplete']); ?>" autocapitalize="none" autocorrect="off"-->
 				<label for="password"
 					   class="infield">{{ t('Password') }}</label>
 			</p>

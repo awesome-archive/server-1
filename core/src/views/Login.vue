@@ -33,7 +33,12 @@
 					:inverted-colors="invertedColors"
 					:auto-complete-allowed="autoCompleteAllowed"
 					@submit="loading = true"/>
-				<a v-if="canResetPassword && !resetPassword"
+				<a v-if="canResetPassword && resetPasswordLink !== ''"
+				   id="lost-password"
+				   :href="resetPasswordLink">
+					{{ t('core', 'Forgot password?') }}
+				</a>
+				<a v-else-if="canResetPassword && !resetPassword"
 				   id="lost-password"
 				   :href="resetPasswordLink"
 				   @click.prevent="resetPassword = true">

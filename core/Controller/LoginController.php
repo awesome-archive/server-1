@@ -201,7 +201,6 @@ class LoginController extends Controller {
 	 * @param string $username
 	 */
 	private function setPasswordResetInitialState(?string $username): void {
-		$parameters = [];
 		if ($username !== null && $username !== '') {
 			$user = $this->userManager->get($username);
 		} else {
@@ -213,7 +212,7 @@ class LoginController extends Controller {
 		$this->initialStateService->provideInitialState(
 			'core',
 			'loginResetPasswordLink',
-			$this->config->getSystemValue('lost_password_link', '')
+			$passwordLink
 		);
 
 		$this->initialStateService->provideInitialState(
